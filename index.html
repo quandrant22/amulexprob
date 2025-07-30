@@ -2,18 +2,37 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мое Первое Mini App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AI-Юрист</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Привет, это твое Mini App!</h1>
-    <p>Информация о пользователе из Telegram:</p>
-    <pre id="user-data">Загрузка...</pre>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>AI-Юрист</h1>
+        </header>
 
-    <!-- Скрипт для взаимодействия с API Telegram -->
+        <main class="chat-area">
+            <!-- Сообщения будут добавляться сюда через JS -->
+            <div class="message bot-message">
+                <p>Здравствуйте! Я ваш AI-помощник. Чем могу помочь?</p>
+            </div>
+        </main>
+
+        <footer class="input-area">
+            <div class="message-counter">
+                <span>Осталось сообщений: 5</span>
+            </div>
+            <div class="input-wrapper">
+                <textarea id="message-input" placeholder="Введите ваш вопрос..."></textarea>
+                <button id="send-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <!-- Наш основной скрипт -->
     <script src="script.js"></script>
 </body>
 </html> 
