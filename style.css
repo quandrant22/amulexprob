@@ -266,6 +266,23 @@ body {
     border-color: var(--button-bg-color);
 }
 
+.external-link-btn {
+    background-color: var(--button-bg-color);
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.external-link-btn:hover {
+    background-color: #3A7BC8;
+}
+
 /* Нижняя навигация */
 .bottom-navigation {
     display: flex;

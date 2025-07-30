@@ -151,6 +151,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Обработчики для внешних ссылок
+    const externalLinkBtns = document.querySelectorAll('.external-link-btn');
+    externalLinkBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const url = btn.getAttribute('data-url');
+            if (url) {
+                // Используем Telegram WebApp API для открытия ссылок
+                if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.openLink) {
+                    window.Telegram.WebApp.openLink(url);
+                } else {
+                    // Fallback для тестирования в браузере
+                    window.open(url, '_blank');
+                }
+            }
+        });
+    });
+
     // Расширяем область для клика на всю обертку в чате
     const inputWrapper = document.querySelector('.input-wrapper');
     if (inputWrapper) {
