@@ -173,7 +173,7 @@ const tg = window.Telegram.WebApp;
                     }
                     
                     // URL вашего Google Apps Script
-                    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz1hxn7ewb-XuV2ytRcKy78gQ_clR1-8ei8DMzAF9LyFcHqpMVEzjHpwXm5j8e07kFHCg/exec';
+                    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyWHhSTgDs8fjKCazQgwSJbctGxUPM_cITzTabGWa5WdBgkBAagJCszXJqzKf-LjyQ4qg/exec';
                     
                     // Отправляем в Google Таблицы
                     const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -290,7 +290,7 @@ const tg = window.Telegram.WebApp;
             }
             
             // URL Google Apps Script
-            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz1hxn7ewb-XuV2ytRcKy78gQ_clR1-8ei8DMzAF9LyFcHqpMVEzjHpwXm5j8e07kFHCg/exec';
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyWHhSTgDs8fjKCazQgwSJbctGxUPM_cITzTabGWa5WdBgkBAagJCszXJqzKf-LjyQ4qg/exec';
             
             // Отправляем в Google Таблицы
             const response = await fetch(GOOGLE_SCRIPT_URL, {
