@@ -12,96 +12,27 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Экран 1: Выбор услуги -->
+        <!-- Экран 1: Документы -->
         <div class="screen active" id="chat-screen">
             <header class="app-header">
                 <h1>Документы</h1>
             </header>
 
-            <main class="services-area">
-                <div class="services-grid">
-                    <!-- Карточка: Документы -->
-                    <div class="service-card" id="documents-card">
-                        <h3>Документы</h3>
-                        <div class="service-options">
-                            <button class="service-btn">Получить юридический анализ</button>
-                            <button class="service-btn">Получить шаблон документа</button>
-                            <button class="service-btn">Найти шаблон на сайте Амулекс</button>
+            <main class="documents-main">
+                <div class="documents-container">
+                    <div class="documents-card">
+                        <h2>Документы</h2>
+                        
+                        <div class="document-buttons">
+                            <button class="doc-btn">Получить юридический анализ</button>
+                            <button class="doc-btn">Получить шаблон документа</button>
+                            <button class="doc-btn">Найти шаблон на сайте Амулекс</button>
                         </div>
-                        <div class="service-question">
+                        
+                        <div class="help-section">
                             <p>Не нашли что ищете?</p>
-                            <button class="question-btn">Отправить запрос</button>
+                            <button class="help-btn">Отправить запрос</button>
                         </div>
-                    </div>
-
-                    <!-- Карточка: Юридический анализ -->
-                    <div class="service-card main-card" id="analysis-card">
-                        <h3>Юридический анализ</h3>
-                        <p class="service-description">
-                            <strong>Юридический анализ — готовое решение вашей проблемы</strong>
-                        </p>
-                        <p class="service-detail">
-                            Хотите точно понять, как защитить свои права и что делать дальше? Закажите персональный юридический анализ от <strong>"Твой Друг Юрист"</strong> — это ваш подробный и понятный план действий, основанный на законе.
-                        </p>
-                        
-                        <div class="analysis-benefits">
-                            <h4>Что вы получите:</h4>
-                            <p><strong>Ясную формулировку вашей проблемы</strong> — мы переведем вашу ситуацию на юридический язык, чтобы было понятно, с чем вы имеете дело.</p>
-                            
-                            <p><strong>Анализ законодательства и судебной практики</strong> — только то, что нужно знать в подобных случаях. Всё самое важное без лишних деталей.</p>
-                            
-                            <p><strong>Оценку ваших шансов на успех</strong> — мы честно скажем, какие шансы на успех, какие есть подводные камни и лучшие пути решения.</p>
-                            
-                            <p><strong>Пошаговый план действий</strong> — четкая инструкция: с чего начать, какие документы собрать, куда обращаться и в какие сроки.</p>
-                            
-                            <p><strong>Советы от "Твой Друг Юрист"</strong> — рекомендации, когда можно действовать самому, а когда лучше подключить юриста.</p>
-                        </div>
-                        
-                        <p class="analysis-format">Отчет придет в виде удобного PDF - распечатайте, сохраняйте, действуйте.</p>
-                        
-                        <p class="analysis-note">Подходит тем, кто хочет действовать уверенно, грамотно и без переплат за консультации.</p>
-                        
-                        <div class="analysis-actions">
-                            <button class="order-btn">Заказать 250 Руб</button>
-                            <button class="example-btn">Посмотреть пример отчета</button>
-                        </div>
-                    </div>
-
-                    <!-- Карточка: Получить шаблон документа -->
-                    <div class="service-card" id="template-card">
-                        <h3>Получить шаблон документа</h3>
-                        <p class="template-description">
-                            Вы можете бесплатно получить шаблон документа, просто напишите какой шаблон вам необходим, и отправим вам пример того, как должен выглядеть шаблон иска, заявления или договора.
-                        </p>
-                        
-                        <p class="template-note">
-                            Однако, рекомендуем воспользоваться шаблонами подготовленными нашими юристами по ссылке (они бесплатные):
-                        </p>
-                        
-                        <div class="template-actions">
-                            <div class="template-link">
-                                <input type="text" placeholder="Найти шаблон на сайте Амулекс" readonly>
-                                <button class="link-btn" data-url="https://amulex.ru/docs">https://amulex.ru/docs</button>
-                            </div>
-                            
-                            <div class="template-request">
-                                <input type="text" placeholder="Заказать профессиональный документ от юристов - можно здесь">
-                                <button class="request-btn" data-url="https://t.me/AmulexBot">Отправить заявку</button>
-                            </div>
-                        </div>
-                        
-                        <p class="template-professional">
-                            Если шаблон сделанный профессиональными юристами вам не нужен, жмите по просьбам, то оставьте в окне ниже ваш запрос на шаблон и мы пришлем вам. жмля быть дальнейшей работы
-                        </p>
-                        
-                        <div class="template-custom">
-                            <textarea placeholder="Введите текст..."></textarea>
-                            <button class="get-template-btn">Получить</button>
-                        </div>
-                        
-                        <p class="template-disclaimer">
-                            Шаблон по готовности должен отображаться здесь
-                        </p>
                     </div>
                 </div>
             </main>

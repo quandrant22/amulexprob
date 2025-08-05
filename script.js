@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Обработчики для кнопок услуг
-    function setupServiceButtons() {
-        // Кнопки в левой карточке
-        const serviceBtns = document.querySelectorAll('.service-btn');
-        serviceBtns.forEach(btn => {
+    // Обработчики для кнопок документов
+    function setupDocumentButtons() {
+        // Основные кнопки документов
+        const docBtns = document.querySelectorAll('.doc-btn');
+        docBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const text = btn.textContent;
                 if (text.includes('юридический анализ')) {
@@ -59,56 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Кнопка "Отправить запрос"
-        const questionBtn = document.querySelector('.question-btn');
-        if (questionBtn) {
-            questionBtn.addEventListener('click', () => {
+        const helpBtn = document.querySelector('.help-btn');
+        if (helpBtn) {
+            helpBtn.addEventListener('click', () => {
                 openExternalLink('https://t.me/mihail_rein');
-            });
-        }
-
-        // Кнопки в центральной карточке
-        const orderBtn = document.querySelector('.order-btn');
-        if (orderBtn) {
-            orderBtn.addEventListener('click', () => {
-                alert('Переход к оплате юридического анализа за 250 рублей');
-            });
-        }
-
-        const exampleBtn = document.querySelector('.example-btn');
-        if (exampleBtn) {
-            exampleBtn.addEventListener('click', () => {
-                alert('Показать пример отчета');
-            });
-        }
-
-        // Кнопки в правой карточке
-        const linkBtn = document.querySelector('.link-btn');
-        if (linkBtn) {
-            linkBtn.addEventListener('click', () => {
-                const url = linkBtn.getAttribute('data-url');
-                openExternalLink(url);
-            });
-        }
-
-        const requestBtn = document.querySelector('.request-btn');
-        if (requestBtn) {
-            requestBtn.addEventListener('click', () => {
-                const url = requestBtn.getAttribute('data-url');
-                openExternalLink(url);
-            });
-        }
-
-        const getTemplateBtn = document.querySelector('.get-template-btn');
-        if (getTemplateBtn) {
-            getTemplateBtn.addEventListener('click', () => {
-                const textarea = document.querySelector('.template-custom textarea');
-                const text = textarea ? textarea.value.trim() : '';
-                if (text) {
-                    alert(`Запрос на шаблон отправлен: "${text}"`);
-                    textarea.value = '';
-                } else {
-                    alert('Пожалуйста, введите описание нужного шаблона');
-                }
             });
         }
     }
@@ -127,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Инициализируем кнопки услуг
-    setupServiceButtons();
+    // Инициализируем кнопки документов
+    setupDocumentButtons();
 
     // Обработчики для кнопок создания документов
     const createDocBtns = document.querySelectorAll('.create-doc-btn');
