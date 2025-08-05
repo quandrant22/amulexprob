@@ -249,7 +249,8 @@ const tg = window.Telegram.WebApp;
             card.addEventListener('click', () => {
                 const title = card.querySelector('h3').textContent;
                 if (title.includes('навсегда')) {
-                    alert('Добавьте бота в чат от 1000 человек, чтобы получить подписку навсегда!\n\nИнструкция:\n1. Создайте группу или канал\n2. Добавьте @amulexprob_bot\n3. Пригласите 1000+ участников');
+                    // Переход на страницу реферальной программы
+                    window.switchScreen('referral-screen');
                 } else if (title.includes('неделю')) {
                     const shareText = 'Попробуй этого юридического помощника! Очень удобно получать консультации и документы:';
                     const shareUrl = `https://t.me/share/url?url=${encodeURIComponent('https://t.me/amulexprob_bot')}&text=${encodeURIComponent(shareText)}`;
@@ -478,8 +479,71 @@ const tg = window.Telegram.WebApp;
         }
     }
 
+    // Обработчики для реферальной программы
+    function setupReferralButtons() {
+        const shareBtn = document.querySelector('.referral-share-btn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', async () => {
+                try {
+                    // Получаем ID пользователя для реферальной ссылки
+                    let userId = 'guest';
+                    if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe) {
+                        const user = window.Telegram.WebApp.initDataUnsafe.user;
+                        if (user && user.id) {
+                            userId = user.id;
+                        }
+                    }
+                    
+                    // Создаем реферальную ссылку
+                    const referralLink = `https://t.me/amulexprob_bot?start=ref_${userId}`;
+                    
+                    // Копируем в буфер обмена
+                    if (navigator.clipboard) {
+                        await navigator.clipboard.writeText(referralLink);
+                        alert('Ссылка скопирована в буфер обмена!\n\nПоделитесь ей с 10 друзьями, чтобы получить неделю премиум доступа.');
+                    } else {
+                        // Fallback для старых браузеров
+                        prompt('Скопируйте эту ссылку:', referralLink);
+                    }
+                } catch (error) {
+                    console.error('Ошибка копирования:', error);
+                    const fallbackLink = 'https://t.me/amulexprob_bot';
+                    prompt('Скопируйте эту ссылку:', fallbackLink);
+                }
+            });
+        }
+
+        const readyBtn = document.querySelector('.referral-ready-btn');
+        if (readyBtn) {
+            readyBtn.addEventListener('click', () => {
+                // Получаем информацию о пользователе
+                let userName = 'Пользователь';
+                let userId = null;
+                
+                if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe) {
+                    const user = window.Telegram.WebApp.initDataUnsafe.user;
+                    if (user) {
+                        userName = `${user.first_name || ''} ${user.last_name || ''}`.trim() || user.username || `Пользователь ${user.id}`;
+                        userId = user.id;
+                    }
+                }
+                
+                // Отправляем уведомление о готовности
+                const message = `🎯 ЗАЯВКА НА ПРОВЕРКУ РЕФЕРАЛОВ\n\n👤 Пользователь: ${userName}\n🆔 Telegram ID: ${userId}\n\n📢 Пользователь утверждает, что поделился ссылкой с 10 друзьями и готов получить неделю премиум доступа.\n\nПожалуйста, проверьте количество рефералов.`;
+                const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
+                
+                openExternalLink(telegramUrl);
+                
+                alert('Ваша заявка отправлена! Мы проверим количество ваших рефералов и свяжемся с вами для активации премиум доступа.');
+            });
+        }
+    }
+
     // Инициализируем форму бонусного предложения
     setupBonusOfferForm();
+    
+    // Инициализируем кнопки реферальной программы
+    setupReferralButtons();
 
     // Расширяем область для клика на всю обертку в чате
     const inputWrapper = document.querySelector('.input-wrapper');

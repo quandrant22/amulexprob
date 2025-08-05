@@ -868,6 +868,129 @@ body {
     background-color: #CC2E2E;
 }
 
+/* Стили для реферальной программы */
+.referral-main {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.referral-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.referral-card {
+    background-color: var(--input-bg-color);
+    border-radius: 20px;
+    padding: 25px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.referral-header h2 {
+    margin: 0 0 25px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.referral-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.referral-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.referral-intro {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--primary-text-color);
+}
+
+.referral-description,
+.referral-gratitude,
+.referral-offer,
+.referral-verification {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--secondary-text-color);
+}
+
+.referral-instruction {
+    background-color: var(--app-bg-color);
+    border-radius: 10px;
+    padding: 15px;
+    border-left: 4px solid var(--button-bg-color);
+}
+
+.referral-instruction p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--primary-text-color);
+}
+
+.referral-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.referral-share-btn,
+.referral-ready-btn {
+    background-color: var(--button-bg-color);
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 15px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+    transition: all 0.2s;
+}
+
+.referral-ready-btn {
+    background-color: var(--app-bg-color);
+    border: 1px solid var(--button-bg-color);
+}
+
+.referral-share-btn:hover,
+.referral-ready-btn:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.referral-share-btn:active,
+.referral-ready-btn:active {
+    transform: scale(0.98);
+}
+
+.referral-note {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.referral-note-text {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--secondary-text-color);
+    font-style: italic;
+}
+
 /* Стили для экрана документов */
 .documents-area {
     flex-grow: 1;
