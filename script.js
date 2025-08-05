@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const screens = document.querySelectorAll('.screen');
     const navItems = document.querySelectorAll('.nav-item');
 
-    // Функция переключения экранов
-    function switchScreen(targetScreenId) {
+    // Функция переключения экранов (делаем глобальной)
+    window.switchScreen = function(targetScreenId) {
         // Скрываем все экраны
         screens.forEach(screen => screen.classList.remove('active'));
         
@@ -31,13 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetScreenId === 'profile-screen') {
             setTimeout(() => setupExternalLinks(), 100);
         }
-    }
+    };
 
     // Обработчики для навигации
     navItems.forEach(item => {
         item.addEventListener('click', () => {
             const screenId = item.getAttribute('data-screen');
-            switchScreen(screenId);
+            window.switchScreen(screenId);
         });
     });
 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', () => {
                 const text = btn.textContent;
                 if (text.includes('юридический анализ')) {
-                    alert('Переход к заказу юридического анализа за 250 рублей');
+                    window.switchScreen('analysis-screen');
                 } else if (text.includes('шаблон документа')) {
                     alert('Переход к получению шаблона документа');
                 } else if (text.includes('Амулекс')) {
@@ -63,6 +63,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (helpBtn) {
             helpBtn.addEventListener('click', () => {
                 openExternalLink('https://t.me/mihail_rein');
+            });
+        }
+    }
+
+    // Обработчики для экрана юридического анализа
+    function setupAnalysisButtons() {
+        const orderAnalysisBtn = document.querySelector('.order-analysis-btn');
+        if (orderAnalysisBtn) {
+            orderAnalysisBtn.addEventListener('click', () => {
+                alert('Переход к оплате юридического анализа за 250 рублей');
+            });
+        }
+
+        const exampleAnalysisBtn = document.querySelector('.example-analysis-btn');
+        if (exampleAnalysisBtn) {
+            exampleAnalysisBtn.addEventListener('click', () => {
+                alert('Показать пример отчета юридического анализа');
             });
         }
     }
@@ -83,6 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Инициализируем кнопки документов
     setupDocumentButtons();
+    
+    // Инициализируем кнопки анализа
+    setupAnalysisButtons();
 
     // Обработчики для кнопок создания документов
     const createDocBtns = document.querySelectorAll('.create-doc-btn');
