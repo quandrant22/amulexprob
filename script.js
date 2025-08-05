@@ -147,10 +147,28 @@ const tg = window.Telegram.WebApp;
                 try {
                     // Получаем информацию о пользователе Telegram
                     let userName = 'Аноним';
+                    let userInfo = {
+                        name: 'Аноним',
+                        id: null,
+                        username: null
+                    };
+                    
                     if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe) {
                         const user = window.Telegram.WebApp.initDataUnsafe.user;
                         if (user) {
-                            userName = `${user.first_name || ''} ${user.last_name || ''}`.trim() || user.username || `ID: ${user.id}`;
+                            const fullName = `${user.first_name || ''} ${user.last_name || ''}`.trim();
+                            userInfo.name = fullName || user.username || `Пользователь ${user.id}`;
+                            userInfo.id = user.id;
+                            userInfo.username = user.username;
+                            
+                            // Формируем строку с полной информацией
+                            userName = userInfo.name;
+                            if (userInfo.username) {
+                                userName += ` (@${userInfo.username})`;
+                            }
+                            if (userInfo.id) {
+                                userName += ` [ID: ${userInfo.id}]`;
+                            }
                         }
                     }
                     
@@ -166,7 +184,10 @@ const tg = window.Telegram.WebApp;
                         },
                         body: JSON.stringify({
                             user: userName,
-                            message: text
+                            message: text,
+                            user_id: userInfo.id,
+                            username: userInfo.username,
+                            full_name: userInfo.name
                         })
                     });
                     
