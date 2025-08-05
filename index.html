@@ -137,7 +137,40 @@
             </main>
         </div>
 
-        <!-- Экран 4: Создание документов -->
+        <!-- Экран 4: Жалобы и предложения -->
+        <div class="screen" id="complaints-screen">
+            <header class="app-header">
+                <button class="back-btn" onclick="switchScreen('chat-screen')">←</button>
+                <h1>Жалобы и предложения</h1>
+            </header>
+
+            <main class="complaints-main">
+                <div class="complaints-container">
+                    <div class="complaints-card">
+                        <h2>Жалобы и предложения</h2>
+                        
+                        <div class="complaints-content">
+                            <p class="complaints-intro">Если вы не нашли в боте то, что искали.</p>
+                            
+                            <div class="complaints-questions">
+                                <p>У вас есть жалобы?</p>
+                                <p>У вас есть предложения?</p>
+                                <p>И другие вопросы/жалобы/предложения разработчикам: напишите в окне ниже.</p>
+                            </div>
+                            
+                            <p class="complaints-note">Мы обязательно учтем ваши пожелания!</p>
+                            
+                            <div class="complaints-input-section">
+                                <textarea placeholder="Введите текст..."></textarea>
+                                <button class="send-complaint-btn">Отправить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Экран 5: Создание документов -->
         <div class="screen" id="documents-screen">
             <header class="app-header">
                 <h1>Документы</h1>

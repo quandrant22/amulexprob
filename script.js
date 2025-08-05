@@ -62,7 +62,7 @@ const tg = window.Telegram.WebApp;
         const helpBtn = document.querySelector('.help-btn');
         if (helpBtn) {
             helpBtn.addEventListener('click', () => {
-                openExternalLink('https://t.me/mihail_rein');
+                window.switchScreen('complaints-screen');
             });
         }
     }
@@ -126,6 +126,29 @@ const tg = window.Telegram.WebApp;
         }
     }
 
+    // Обработчики для экрана жалоб и предложений
+    function setupComplaintsButtons() {
+        const sendComplaintBtn = document.querySelector('.send-complaint-btn');
+        if (sendComplaintBtn) {
+            sendComplaintBtn.addEventListener('click', () => {
+                const textarea = document.querySelector('.complaints-input-section textarea');
+                const text = textarea ? textarea.value.trim() : '';
+                if (text) {
+                    // Отправляем жалобу/предложение через Telegram
+                    const message = `Жалоба/предложение от пользователя:\n\n${text}`;
+                    const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
+                    openExternalLink(telegramUrl);
+                    
+                    // Очищаем поле и показываем уведомление
+                    textarea.value = '';
+                    alert('Спасибо за ваше обращение! Мы обязательно рассмотрим его.');
+                } else {
+                    alert('Пожалуйста, введите текст жалобы или предложения');
+                }
+            });
+        }
+    }
+
     // Функция для открытия внешних ссылок
     function openExternalLink(url) {
         if (window.Telegram && window.Telegram.WebApp) {
@@ -148,6 +171,9 @@ const tg = window.Telegram.WebApp;
     
     // Инициализируем кнопки шаблонов
     setupTemplateButtons();
+    
+    // Инициализируем кнопки жалоб
+    setupComplaintsButtons();
 
     // Обработчики для кнопок создания документов
     const createDocBtns = document.querySelectorAll('.create-doc-btn');
