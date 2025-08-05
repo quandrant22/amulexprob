@@ -249,12 +249,10 @@ const tg = window.Telegram.WebApp;
             card.addEventListener('click', () => {
                 const title = card.querySelector('h3').textContent;
                 if (title.includes('навсегда')) {
+                    alert('Добавьте бота в чат от 1000 человек, чтобы получить подписку навсегда!\n\nИнструкция:\n1. Создайте группу или канал\n2. Добавьте @amulexprob_bot\n3. Пригласите 1000+ участников');
+                } else if (title.includes('неделю')) {
                     // Переход на страницу реферальной программы
                     window.switchScreen('referral-screen');
-                } else if (title.includes('неделю')) {
-                    const shareText = 'Попробуй этого юридического помощника! Очень удобно получать консультации и документы:';
-                    const shareUrl = `https://t.me/share/url?url=${encodeURIComponent('https://t.me/amulexprob_bot')}&text=${encodeURIComponent(shareText)}`;
-                    openExternalLink(shareUrl);
                 }
             });
             card.style.cursor = 'pointer';
