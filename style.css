@@ -137,15 +137,33 @@ body {
 
 /* Кнопка "Назад" в заголовке */
 .back-btn {
-    background: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
     border: none;
     color: var(--primary-text-color);
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.2s;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.back-btn:active {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 /* Стили для экрана юридического анализа */
