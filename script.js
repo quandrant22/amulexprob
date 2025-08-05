@@ -2,10 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tg = window.Telegram.WebApp;
     tg.ready();
 
-    // Элементы для чата
-    const chatArea = document.querySelector('.chat-area');
-    const messageInput = document.getElementById('message-input');
-    const sendButton = document.getElementById('send-button');
+    // Элементы для услуг
+    const servicesArea = document.querySelector('.services-area');
 
     // Элементы навигации
     const screens = document.querySelectorAll('.screen');
@@ -28,6 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (activeNavItem) {
             activeNavItem.classList.add('active');
         }
+
+        // Если переключились на экран профиля, переинициализируем внешние ссылки
+        if (targetScreenId === 'profile-screen') {
+            setTimeout(() => setupExternalLinks(), 100);
+        }
     }
 
     // Обработчики для навигации
@@ -38,86 +41,94 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Функция отправки сообщения в чате
-    function sendMessage() {
-        const text = messageInput.value.trim();
-
-        if (text === '') {
-            return;
-        }
-
-        // Создаем и добавляем сообщение пользователя
-        const messageElement = document.createElement('div');
-        messageElement.className = 'message user-message';
-        const messageParagraph = document.createElement('p');
-        messageParagraph.textContent = text;
-        messageElement.appendChild(messageParagraph);
-        chatArea.appendChild(messageElement);
-
-        // Очищаем поле ввода и сбрасываем его высоту
-        messageInput.value = '';
-        messageInput.style.height = 'auto';
-        
-        // Прокручиваем чат вниз
-        chatArea.scrollTop = chatArea.scrollHeight;
-
-        // Имитируем ответ бота через 1-2 секунды
-        setTimeout(() => {
-            addBotMessage("Спасибо за ваш вопрос! Я обрабатываю информацию и скоро дам вам подробный ответ.");
-            updateMessageCounter();
-        }, 1000 + Math.random() * 1000);
-    }
-
-    // Функция добавления сообщения бота
-    function addBotMessage(text) {
-        const messageElement = document.createElement('div');
-        messageElement.className = 'message bot-message';
-        const messageParagraph = document.createElement('p');
-        messageParagraph.textContent = text;
-        messageElement.appendChild(messageParagraph);
-        chatArea.appendChild(messageElement);
-        
-        // Прокручиваем чат вниз
-        chatArea.scrollTop = chatArea.scrollHeight;
-    }
-
-    // Функция обновления счетчика сообщений
-    function updateMessageCounter() {
-        const counter = document.querySelector('.message-counter span');
-        if (counter) {
-            const currentCount = parseInt(counter.textContent.match(/\d+/)[0]);
-            const newCount = Math.max(0, currentCount - 1);
-            counter.textContent = `Осталось сообщений: ${newCount}`;
-            
-            // Если сообщения закончились, показываем предложение оплаты
-            if (newCount === 0) {
-                setTimeout(() => {
-                    addBotMessage("У вас закончились бесплатные сообщения. Перейдите в раздел 'Профиль' для улучшения тарифного плана.");
-                }, 500);
-            }
-        }
-    }
-
-    // Обработчики для чата
-    if (sendButton) {
-        sendButton.addEventListener('click', sendMessage);
-    }
-
-    if (messageInput) {
-        // Обработчик для клавиши Enter
-        messageInput.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' && !event.shiftKey) {
-                event.preventDefault();
-                sendMessage();
-            }
+    // Обработчики для кнопок услуг
+    function setupServiceButtons() {
+        // Кнопки в левой карточке
+        const serviceBtns = document.querySelectorAll('.service-btn');
+        serviceBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const text = btn.textContent;
+                if (text.includes('юридический анализ')) {
+                    alert('Переход к заказу юридического анализа за 250 рублей');
+                } else if (text.includes('шаблон документа')) {
+                    alert('Переход к получению шаблона документа');
+                } else if (text.includes('Амулекс')) {
+                    openExternalLink('https://amulex.ru/docs');
+                }
+            });
         });
 
-        // Автоматическое изменение высоты поля ввода
-        messageInput.addEventListener('input', () => {
-            messageInput.style.height = 'auto';
-            messageInput.style.height = (messageInput.scrollHeight) + 'px';
-        });
+        // Кнопка "Отправить запрос"
+        const questionBtn = document.querySelector('.question-btn');
+        if (questionBtn) {
+            questionBtn.addEventListener('click', () => {
+                openExternalLink('https://t.me/mihail_rein');
+            });
+        }
+
+        // Кнопки в центральной карточке
+        const orderBtn = document.querySelector('.order-btn');
+        if (orderBtn) {
+            orderBtn.addEventListener('click', () => {
+                alert('Переход к оплате юридического анализа за 250 рублей');
+            });
+        }
+
+        const exampleBtn = document.querySelector('.example-btn');
+        if (exampleBtn) {
+            exampleBtn.addEventListener('click', () => {
+                alert('Показать пример отчета');
+            });
+        }
+
+        // Кнопки в правой карточке
+        const linkBtn = document.querySelector('.link-btn');
+        if (linkBtn) {
+            linkBtn.addEventListener('click', () => {
+                const url = linkBtn.getAttribute('data-url');
+                openExternalLink(url);
+            });
+        }
+
+        const requestBtn = document.querySelector('.request-btn');
+        if (requestBtn) {
+            requestBtn.addEventListener('click', () => {
+                const url = requestBtn.getAttribute('data-url');
+                openExternalLink(url);
+            });
+        }
+
+        const getTemplateBtn = document.querySelector('.get-template-btn');
+        if (getTemplateBtn) {
+            getTemplateBtn.addEventListener('click', () => {
+                const textarea = document.querySelector('.template-custom textarea');
+                const text = textarea ? textarea.value.trim() : '';
+                if (text) {
+                    alert(`Запрос на шаблон отправлен: "${text}"`);
+                    textarea.value = '';
+                } else {
+                    alert('Пожалуйста, введите описание нужного шаблона');
+                }
+            });
+        }
     }
+
+    // Функция для открытия внешних ссылок
+    function openExternalLink(url) {
+        if (window.Telegram && window.Telegram.WebApp) {
+            try {
+                window.Telegram.WebApp.openLink(url);
+            } catch (error) {
+                console.error('Ошибка Telegram WebApp API:', error);
+                window.open(url, '_blank');
+            }
+        } else {
+            window.open(url, '_blank');
+        }
+    }
+
+    // Инициализируем кнопки услуг
+    setupServiceButtons();
 
     // Обработчики для кнопок создания документов
     const createDocBtns = document.querySelectorAll('.create-doc-btn');
@@ -152,21 +163,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Обработчики для внешних ссылок
-    const externalLinkBtns = document.querySelectorAll('.external-link-btn');
-    externalLinkBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const url = btn.getAttribute('data-url');
-            if (url) {
-                // Используем Telegram WebApp API для открытия ссылок
-                if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.openLink) {
-                    window.Telegram.WebApp.openLink(url);
+    function setupExternalLinks() {
+        const externalLinkBtns = document.querySelectorAll('.external-link-btn');
+        console.log('Найдено кнопок внешних ссылок:', externalLinkBtns.length);
+        
+        externalLinkBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const url = btn.getAttribute('data-url');
+                console.log('Нажата кнопка с URL:', url);
+                
+                if (url) {
+                    // Сначала пробуем Telegram WebApp API
+                    if (window.Telegram && window.Telegram.WebApp) {
+                        console.log('Используем Telegram WebApp API');
+                        try {
+                            window.Telegram.WebApp.openLink(url);
+                        } catch (error) {
+                            console.error('Ошибка Telegram WebApp API:', error);
+                            // Fallback на обычное открытие
+                            window.open(url, '_blank');
+                        }
+                    } else {
+                        console.log('Telegram WebApp API недоступен, используем window.open');
+                        // Fallback для тестирования в браузере
+                        window.open(url, '_blank');
+                    }
                 } else {
-                    // Fallback для тестирования в браузере
-                    window.open(url, '_blank');
+                    console.error('URL не найден для кнопки');
                 }
-            }
+            });
         });
-    });
+    }
+    
+    // Вызываем настройку ссылок
+    setupExternalLinks();
 
     // Расширяем область для клика на всю обертку в чате
     const inputWrapper = document.querySelector('.input-wrapper');
