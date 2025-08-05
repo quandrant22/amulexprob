@@ -508,6 +508,198 @@ body {
     align-self: center;
 }
 
+/* Стили для экрана Инфо */
+.info-main {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.info-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.info-card {
+    background-color: var(--input-bg-color);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: left;
+}
+
+.info-card h2 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    text-align: center;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-section h3 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-text-color);
+}
+
+.info-section p {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--primary-text-color);
+}
+
+.info-section ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.info-section li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: var(--primary-text-color);
+}
+
+.info-section a {
+    color: var(--button-bg-color);
+    text-decoration: none;
+}
+
+.info-section a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для экрана Бонусы */
+.bonuses-area {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.bonuses-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.bonus-card {
+    background-color: var(--input-bg-color);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: left;
+}
+
+.bonus-card h2 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    text-align: center;
+}
+
+.bonus-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.bonus-section h3 {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-text-color);
+}
+
+.bonus-balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--app-bg-color);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.bonus-amount {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--button-bg-color);
+}
+
+.bonus-label {
+    font-size: 18px;
+    color: var(--primary-text-color);
+}
+
+.bonus-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.bonus-list li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: var(--primary-text-color);
+}
+
+.bonus-offers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bonus-offer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--app-bg-color);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.offer-title {
+    font-size: 15px;
+    color: var(--primary-text-color);
+}
+
+.offer-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--button-bg-color);
+}
+
+.bonus-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.invite-friend-btn, .bonus-history-btn {
+    background-color: var(--button-bg-color);
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+}
+
+.bonus-history-btn {
+    background-color: var(--app-bg-color);
+    border: 1px solid var(--secondary-text-color);
+}
+
 /* Стили для экрана документов */
 .documents-area {
     flex-grow: 1;

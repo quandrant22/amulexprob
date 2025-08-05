@@ -149,6 +149,25 @@ const tg = window.Telegram.WebApp;
         }
     }
 
+    // Обработчики для экрана бонусов
+    function setupBonusButtons() {
+        const inviteFriendBtn = document.querySelector('.invite-friend-btn');
+        if (inviteFriendBtn) {
+            inviteFriendBtn.addEventListener('click', () => {
+                const inviteText = 'Попробуй этого юридического помощника! Очень удобно получать консультации и документы: https://t.me/amulexprob_bot';
+                const shareUrl = `https://t.me/share/url?url=${encodeURIComponent('https://t.me/amulexprob_bot')}&text=${encodeURIComponent(inviteText)}`;
+                openExternalLink(shareUrl);
+            });
+        }
+
+        const bonusHistoryBtn = document.querySelector('.bonus-history-btn');
+        if (bonusHistoryBtn) {
+            bonusHistoryBtn.addEventListener('click', () => {
+                alert('История баллов:\n\nПока операций не было.\nНачните использовать приложение, чтобы накапливать бонусы!');
+            });
+        }
+    }
+
     // Функция для открытия внешних ссылок
     function openExternalLink(url) {
         if (window.Telegram && window.Telegram.WebApp) {
@@ -174,6 +193,9 @@ const tg = window.Telegram.WebApp;
     
     // Инициализируем кнопки жалоб
     setupComplaintsButtons();
+    
+    // Инициализируем кнопки бонусов
+    setupBonusButtons();
 
     // Обработчики для кнопок создания документов
     const createDocBtns = document.querySelectorAll('.create-doc-btn');
