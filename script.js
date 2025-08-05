@@ -249,7 +249,8 @@ const tg = window.Telegram.WebApp;
             card.addEventListener('click', () => {
                 const title = card.querySelector('h3').textContent;
                 if (title.includes('навсегда')) {
-                    alert('Добавьте бота в чат от 1000 человек, чтобы получить подписку навсегда!\n\nИнструкция:\n1. Создайте группу или канал\n2. Добавьте @amulexprob_bot\n3. Пригласите 1000+ участников');
+                    // Переход на страницу подписки навсегда
+                    window.switchScreen('forever-subscription-screen');
                 } else if (title.includes('неделю')) {
                     // Переход на страницу реферальной программы
                     window.switchScreen('referral-screen');
@@ -540,8 +541,39 @@ const tg = window.Telegram.WebApp;
     // Инициализируем форму бонусного предложения
     setupBonusOfferForm();
     
+    // Обработчики для страницы "Подписка навсегда"
+    function setupForeverSubscriptionButtons() {
+        const contactBtn = document.querySelector('.forever-contact-btn');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', () => {
+                // Получаем информацию о пользователе
+                let userName = 'Пользователь';
+                let userId = null;
+                
+                if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe) {
+                    const user = window.Telegram.WebApp.initDataUnsafe.user;
+                    if (user) {
+                        userName = `${user.first_name || ''} ${user.last_name || ''}`.trim() || user.username || `Пользователь ${user.id}`;
+                        userId = user.id;
+                    }
+                }
+                
+                // Отправляем сообщение о желании получить подписку навсегда
+                const message = `🏆 ЗАЯВКА НА ПОДПИСКУ НАВСЕГДА\n\n👤 Пользователь: ${userName}\n🆔 Telegram ID: ${userId}\n\n📢 Пользователь хочет добавить @amulexfriendbot в чат от 1000+ человек для получения подписки навсегда.\n\nИнструкция для пользователя:\n1. Договориться с админом чата\n2. Добавить @amulexfriendbot в чат\n3. Назначить бота админом\n4. Прислать ссылку на чат для проверки\n\nОжидает дальнейших инструкций.`;
+                const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
+                
+                openExternalLink(telegramUrl);
+                
+                alert('Ваша заявка отправлена! Мы свяжемся с вами с дальнейшими инструкциями по добавлению бота в чат.');
+            });
+        }
+    }
+
     // Инициализируем кнопки реферальной программы
     setupReferralButtons();
+    
+    // Инициализируем кнопки подписки навсегда
+    setupForeverSubscriptionButtons();
 
     // Расширяем область для клика на всю обертку в чате
     const inputWrapper = document.querySelector('.input-wrapper');

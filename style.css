@@ -991,6 +991,139 @@ body {
     font-style: italic;
 }
 
+/* Стили для страницы "Подписка навсегда" */
+.forever-main {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.forever-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.forever-card {
+    background-color: var(--input-bg-color);
+    border-radius: 20px;
+    padding: 25px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.forever-header h2 {
+    margin: 0 0 25px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.forever-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.forever-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.forever-intro {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--primary-text-color);
+}
+
+.forever-description,
+.forever-offer {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--secondary-text-color);
+}
+
+.forever-instruction {
+    background-color: var(--app-bg-color);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.forever-instruction h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-text-color);
+}
+
+.forever-steps {
+    margin: 0;
+    padding-left: 20px;
+    list-style: decimal;
+}
+
+.forever-steps li {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--secondary-text-color);
+}
+
+.forever-steps li:last-child {
+    margin-bottom: 0;
+}
+
+.forever-steps strong {
+    color: var(--primary-text-color);
+}
+
+.forever-contact {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.forever-contact-text {
+    margin: 0;
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    font-family: monospace;
+}
+
+.forever-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.forever-contact-btn {
+    background-color: var(--button-bg-color);
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 15px;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+    transition: all 0.2s;
+}
+
+.forever-contact-btn:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.forever-contact-btn:active {
+    transform: scale(0.98);
+}
+
 /* Стили для экрана документов */
 .documents-area {
     flex-grow: 1;
