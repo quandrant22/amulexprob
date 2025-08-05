@@ -196,6 +196,11 @@ const tg = window.Telegram.WebApp;
                     alert('Спасибо за ваше обращение! Оно успешно отправлено и будет рассмотрено.');
                     textarea.value = '';
                     
+                    // Возвращаем пользователя на главную страницу документов
+                    setTimeout(() => {
+                        window.switchScreen('chat-screen');
+                    }, 1000);
+                    
                 } catch (error) {
                     console.error('Ошибка отправки в Google Таблицы:', error);
                     
@@ -206,6 +211,11 @@ const tg = window.Telegram.WebApp;
                     
                     alert('Сообщение отправлено через Telegram. Мы обязательно его рассмотрим.');
                     textarea.value = '';
+                    
+                    // Возвращаем пользователя на главную страницу документов
+                    setTimeout(() => {
+                        window.switchScreen('chat-screen');
+                    }, 1000);
                 } finally {
                     // Восстанавливаем кнопку
                     sendComplaintBtn.textContent = originalText;
