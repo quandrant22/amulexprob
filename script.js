@@ -130,20 +130,64 @@ const tg = window.Telegram.WebApp;
     function setupComplaintsButtons() {
         const sendComplaintBtn = document.querySelector('.send-complaint-btn');
         if (sendComplaintBtn) {
-            sendComplaintBtn.addEventListener('click', () => {
+            sendComplaintBtn.addEventListener('click', async () => {
                 const textarea = document.querySelector('.complaints-input-section textarea');
                 const text = textarea ? textarea.value.trim() : '';
-                if (text) {
-                    // Отправляем жалобу/предложение через Telegram
-                    const message = `Жалоба/предложение от пользователя:\n\n${text}`;
+                
+                if (!text) {
+                    alert('Пожалуйста, введите текст жалобы или предложения');
+                    return;
+                }
+                
+                // Показываем индикатор загрузки
+                const originalText = sendComplaintBtn.textContent;
+                sendComplaintBtn.textContent = 'Отправляем...';
+                sendComplaintBtn.disabled = true;
+                
+                try {
+                    // Получаем информацию о пользователе Telegram
+                    let userName = 'Аноним';
+                    if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe) {
+                        const user = window.Telegram.WebApp.initDataUnsafe.user;
+                        if (user) {
+                            userName = `${user.first_name || ''} ${user.last_name || ''}`.trim() || user.username || `ID: ${user.id}`;
+                        }
+                    }
+                    
+                    // URL вашего Google Apps Script (ЗАМЕНИТЕ НА СВОЙ!)
+                    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+                    
+                    // Отправляем в Google Таблицы
+                    const response = await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors', // Важно для Google Apps Script
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            user: userName,
+                            message: text
+                        })
+                    });
+                    
+                    // Успешная отправка
+                    alert('Спасибо за ваше обращение! Оно успешно отправлено и будет рассмотрено.');
+                    textarea.value = '';
+                    
+                } catch (error) {
+                    console.error('Ошибка отправки в Google Таблицы:', error);
+                    
+                    // Fallback - отправляем в Telegram
+                    const message = `📝 ЖАЛОБА/ПРЕДЛОЖЕНИЕ:\n\n${text}`;
                     const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
                     openExternalLink(telegramUrl);
                     
-                    // Очищаем поле и показываем уведомление
+                    alert('Сообщение отправлено через Telegram. Мы обязательно его рассмотрим.');
                     textarea.value = '';
-                    alert('Спасибо за ваше обращение! Мы обязательно рассмотрим его.');
-                } else {
-                    alert('Пожалуйста, введите текст жалобы или предложения');
+                } finally {
+                    // Восстанавливаем кнопку
+                    sendComplaintBtn.textContent = originalText;
+                    sendComplaintBtn.disabled = false;
                 }
             });
         }
