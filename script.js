@@ -182,9 +182,7 @@ const tg = window.Telegram.WebApp;
         const specialCard = document.querySelector('.bonus-card.special');
         if (specialCard) {
             specialCard.addEventListener('click', () => {
-                const message = 'Хочу узнать подробности о программе "Приведи друга на банкротство" за 40,000 рублей';
-                const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
-                openExternalLink(telegramUrl);
+                window.switchScreen('bonus-offer-screen');
             });
             specialCard.style.cursor = 'pointer';
         }
@@ -287,6 +285,55 @@ const tg = window.Telegram.WebApp;
     
     // Вызываем настройку ссылок
     setupExternalLinks();
+
+    // Обработчик для формы "Дарим 40 000 рублей"
+    function setupBonusOfferForm() {
+        const bonusForm = document.querySelector('.bonus-form');
+        if (bonusForm) {
+            bonusForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const nameInput = bonusForm.querySelector('input[type="text"]');
+                const phoneInput = bonusForm.querySelector('input[type="tel"]');
+                const agreementCheckbox = bonusForm.querySelector('#agreement');
+                
+                const name = nameInput.value.trim();
+                const phone = phoneInput.value.trim();
+                
+                if (!name) {
+                    alert('Пожалуйста, введите ваше имя');
+                    return;
+                }
+                
+                if (!phone) {
+                    alert('Пожалуйста, введите номер телефона');
+                    return;
+                }
+                
+                if (!agreementCheckbox.checked) {
+                    alert('Необходимо дать согласие на обработку данных');
+                    return;
+                }
+                
+                // Отправляем данные в Telegram
+                const message = `🎁 ЗАЯВКА НА БОНУС 40,000 РУБЛЕЙ\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n\n💼 Услуга: Банкротство физических лиц\n💰 Запрашиваемая скидка: 40,000 рублей`;
+                const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
+                
+                openExternalLink(telegramUrl);
+                
+                // Показываем сообщение об успехе
+                alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время для активации бонусного предложения.');
+                
+                // Очищаем форму
+                nameInput.value = '';
+                phoneInput.value = '';
+                agreementCheckbox.checked = false;
+            });
+        }
+    }
+
+    // Инициализируем форму бонусного предложения
+    setupBonusOfferForm();
 
     // Расширяем область для клика на всю обертку в чате
     const inputWrapper = document.querySelector('.input-wrapper');
