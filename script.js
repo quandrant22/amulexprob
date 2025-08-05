@@ -154,8 +154,8 @@ const tg = window.Telegram.WebApp;
                         }
                     }
                     
-                    // URL вашего Google Apps Script (ЗАМЕНИТЕ НА СВОЙ!)
-                    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+                    // URL вашего Google Apps Script
+                    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxIBmnzGvNpSbTdGJ9WKKxNHp-gAbrpcJhtbhFyAacG00PnzvJaJmwn7JWemJMdKUSj_g/exec';
                     
                     // Отправляем в Google Таблицы
                     const response = await fetch(GOOGLE_SCRIPT_URL, {
