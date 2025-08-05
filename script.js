@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
     tg.ready();
 
     // Элементы для услуг
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (text.includes('юридический анализ')) {
                     window.switchScreen('analysis-screen');
                 } else if (text.includes('шаблон документа')) {
-                    alert('Переход к получению шаблона документа');
+                    window.switchScreen('template-screen');
                 } else if (text.includes('Амулекс')) {
                     openExternalLink('https://amulex.ru/docs');
                 }
@@ -84,6 +84,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Обработчики для экрана шаблонов документов
+    function setupTemplateButtons() {
+        // Кнопка "Найти шаблон на сайте Амулекс"
+        const templateLinkBtn = document.querySelector('.template-link-btn');
+        if (templateLinkBtn) {
+            templateLinkBtn.addEventListener('click', () => {
+                const url = templateLinkBtn.getAttribute('data-url');
+                openExternalLink(url);
+            });
+        }
+
+        // Кнопка "Отправить заявку" для профессиональных документов
+        const professionalBtn = document.querySelector('.professional-btn');
+        if (professionalBtn) {
+            professionalBtn.addEventListener('click', () => {
+                const url = professionalBtn.getAttribute('data-url');
+                openExternalLink(url);
+            });
+        }
+
+        // Кнопка "Получить" для кастомного шаблона
+        const getCustomTemplateBtn = document.querySelector('.get-custom-template-btn');
+        if (getCustomTemplateBtn) {
+            getCustomTemplateBtn.addEventListener('click', () => {
+                const textarea = document.querySelector('.custom-input-wrapper textarea');
+                const text = textarea ? textarea.value.trim() : '';
+                if (text) {
+                    // Показываем результат в специальной области
+                    const resultArea = document.querySelector('.template-result p');
+                    if (resultArea) {
+                        resultArea.textContent = `Ваш запрос "${text}" принят. Шаблон будет подготовлен в ближайшее время.`;
+                        resultArea.style.color = 'var(--primary-text-color)';
+                        resultArea.style.fontStyle = 'normal';
+                    }
+                    textarea.value = '';
+                } else {
+                    alert('Пожалуйста, введите описание нужного шаблона');
+                }
+            });
+        }
+    }
+
     // Функция для открытия внешних ссылок
     function openExternalLink(url) {
         if (window.Telegram && window.Telegram.WebApp) {
@@ -103,6 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Инициализируем кнопки анализа
     setupAnalysisButtons();
+    
+    // Инициализируем кнопки шаблонов
+    setupTemplateButtons();
 
     // Обработчики для кнопок создания документов
     const createDocBtns = document.querySelectorAll('.create-doc-btn');
@@ -163,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Fallback для тестирования в браузере
                         window.open(url, '_blank');
                     }
-                } else {
+    } else {
                     console.error('URL не найден для кнопки');
                 }
             });
@@ -182,4 +227,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
+}); 

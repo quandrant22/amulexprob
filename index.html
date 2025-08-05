@@ -85,7 +85,59 @@
             </main>
         </div>
 
-        <!-- Экран 3: Создание документов -->
+        <!-- Экран 3: Получить шаблон документа -->
+        <div class="screen" id="template-screen">
+            <header class="app-header">
+                <button class="back-btn" onclick="switchScreen('chat-screen')">←</button>
+                <h1>Получить шаблон документа</h1>
+            </header>
+
+            <main class="template-main">
+                <div class="template-container">
+                    <div class="template-card">
+                        <h2>Получить шаблон документа</h2>
+                        
+                        <div class="template-content">
+                            <p class="template-description">
+                                Вы можете бесплатно получить шаблон документа, просто напишите какой шаблон вам необходим, и отправим вам пример того, как должен выглядеть шаблон иска, заявления или договора.
+                            </p>
+                            
+                            <p class="template-recommendation">
+                                Однако, рекомендуем воспользоваться шаблонами подготовленными нашими юристами по ссылке (они бесплатные):
+                            </p>
+                            
+                            <div class="template-link-section">
+                                <button class="template-link-btn" data-url="https://amulex.ru/docs">Найти шаблон на сайте Амулекс</button>
+                            </div>
+                            
+                            <div class="template-professional-section">
+                                <div class="professional-input-wrapper">
+                                    <input type="text" placeholder="Заказать профессиональный документ от юристов Амулекс можно здесь" readonly>
+                                    <button class="professional-btn" data-url="https://t.me/AmulexBot">Отправить заявку</button>
+                                </div>
+                            </div>
+                            
+                            <p class="template-custom-note">
+                                Если шаблон сделанный профессиональными юристами вам не нужен, хотите по простому, то напишите в окне ниже ваш запрос на шаблон и мы пришлем вам .word файл для дальнейшей работы
+                            </p>
+                            
+                            <div class="template-custom-section">
+                                <div class="custom-input-wrapper">
+                                    <textarea placeholder="Введите текст..."></textarea>
+                                    <button class="get-custom-template-btn">Получить</button>
+                                </div>
+                            </div>
+                            
+                            <div class="template-result">
+                                <p>Шаблон по готовности должен отображаться здесь</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Экран 4: Создание документов -->
         <div class="screen" id="documents-screen">
             <header class="app-header">
                 <h1>Документы</h1>
@@ -194,4 +246,4 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="script.js"></script>
 </body>
-</html>
+</html> 
