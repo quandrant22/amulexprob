@@ -221,7 +221,7 @@ const tg = window.Telegram.WebApp;
         const suggestionCard = document.querySelector('.bonus-card.suggestion');
         if (suggestionCard) {
             suggestionCard.addEventListener('click', () => {
-                // Показываем prompt для ввода предложения
+                // Показываем prompt для ввода предложения  
                 const suggestion = prompt('Напишите ваше предложение для улучшения бота:');
                 
                 if (suggestion && suggestion.trim()) {
