@@ -151,20 +151,42 @@ const tg = window.Telegram.WebApp;
 
     // Обработчики для экрана бонусов
     function setupBonusButtons() {
-        const inviteFriendBtn = document.querySelector('.invite-friend-btn');
-        if (inviteFriendBtn) {
-            inviteFriendBtn.addEventListener('click', () => {
-                const inviteText = 'Попробуй этого юридического помощника! Очень удобно получать консультации и документы: https://t.me/amulexprob_bot';
-                const shareUrl = `https://t.me/share/url?url=${encodeURIComponent('https://t.me/amulexprob_bot')}&text=${encodeURIComponent(inviteText)}`;
-                openExternalLink(shareUrl);
+        // Обработчик для карточки "Есть предложение"
+        const suggestionCard = document.querySelector('.bonus-card.suggestion');
+        if (suggestionCard) {
+            suggestionCard.addEventListener('click', () => {
+                const message = 'У меня есть предложение для улучшения бота:';
+                const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
+                openExternalLink(telegramUrl);
             });
+            suggestionCard.style.cursor = 'pointer';
         }
 
-        const bonusHistoryBtn = document.querySelector('.bonus-history-btn');
-        if (bonusHistoryBtn) {
-            bonusHistoryBtn.addEventListener('click', () => {
-                alert('История баллов:\n\nПока операций не было.\nНачните использовать приложение, чтобы накапливать бонусы!');
+        // Обработчики для карточек подписок
+        const bonusCards = document.querySelectorAll('.bonus-card:not(.suggestion):not(.special)');
+        bonusCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3').textContent;
+                if (title.includes('навсегда')) {
+                    alert('Добавьте бота в чат от 1000 человек, чтобы получить подписку навсегда!\n\nИнструкция:\n1. Создайте группу или канал\n2. Добавьте @amulexprob_bot\n3. Пригласите 1000+ участников');
+                } else if (title.includes('неделю')) {
+                    const shareText = 'Попробуй этого юридического помощника! Очень удобно получать консультации и документы:';
+                    const shareUrl = `https://t.me/share/url?url=${encodeURIComponent('https://t.me/amulexprob_bot')}&text=${encodeURIComponent(shareText)}`;
+                    openExternalLink(shareUrl);
+                }
             });
+            card.style.cursor = 'pointer';
+        });
+
+        // Обработчик для специальной карточки банкротства
+        const specialCard = document.querySelector('.bonus-card.special');
+        if (specialCard) {
+            specialCard.addEventListener('click', () => {
+                const message = 'Хочу узнать подробности о программе "Приведи друга на банкротство" за 40,000 рублей';
+                const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
+                openExternalLink(telegramUrl);
+            });
+            specialCard.style.cursor = 'pointer';
         }
     }
 

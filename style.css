@@ -589,115 +589,90 @@ body {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
-}
-
-.bonus-card {
-    background-color: var(--input-bg-color);
-    border-radius: 20px;
-    padding: 30px 20px;
-    text-align: left;
-}
-
-.bonus-card h2 {
-    margin: 0 0 20px 0;
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--primary-text-color);
-    text-align: center;
-}
-
-.bonus-content {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.bonus-section h3 {
-    margin: 0 0 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--primary-text-color);
-}
-
-.bonus-balance {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: var(--app-bg-color);
-    border-radius: 15px;
-    padding: 20px;
-}
-
-.bonus-amount {
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--button-bg-color);
-}
-
-.bonus-label {
-    font-size: 18px;
-    color: var(--primary-text-color);
-}
-
-.bonus-list {
-    margin: 0;
-    padding-left: 20px;
-}
-
-.bonus-list li {
-    margin-bottom: 10px;
-    font-size: 15px;
-    color: var(--primary-text-color);
-}
-
-.bonus-offers {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.bonus-offer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--app-bg-color);
-    border-radius: 10px;
-    padding: 15px;
-}
-
-.offer-title {
-    font-size: 15px;
-    color: var(--primary-text-color);
-}
-
-.offer-price {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--button-bg-color);
-}
-
-.bonus-actions {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.invite-friend-btn, .bonus-history-btn {
-    background-color: var(--button-bg-color);
-    color: var(--primary-text-color);
-    border: none;
-    border-radius: 25px;
-    padding: 15px 30px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    font-family: 'Manrope', sans-serif;
+.bonus-card {
+    background-color: var(--input-bg-color);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.bonus-history-btn {
-    background-color: var(--app-bg-color);
-    border: 1px solid var(--secondary-text-color);
+.bonus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.bonus-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    line-height: 1.3;
+    flex: 1;
+    padding-right: 15px;
+}
+
+.bonus-price {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    white-space: nowrap;
+}
+
+.bonus-description {
+    margin: 0;
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    font-style: italic;
+}
+
+/* Специальная карточка с большой суммой */
+.bonus-card.special {
+    background-color: var(--input-bg-color);
+}
+
+.bonus-card.special .bonus-header h3 {
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+.bonus-price-special {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FF4444;
+    white-space: nowrap;
+}
+
+/* Карточка предложения */
+.bonus-card.suggestion {
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.bonus-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bonus-content-center p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--primary-text-color);
+    font-weight: 500;
+}
+
+/* Удаляем старые стили, которые больше не нужны */
+.bonus-content, .bonus-section, .bonus-balance, .bonus-amount, .bonus-label, 
+.bonus-list, .bonus-offers, .bonus-offer, .offer-title, .offer-price, 
+.bonus-actions, .invite-friend-btn, .bonus-history-btn {
+    display: none;
 }
 
 /* Стили для экрана документов */
