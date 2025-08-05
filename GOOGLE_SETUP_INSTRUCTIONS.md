@@ -25,16 +25,16 @@ function doPost(e) {
       sheet = ss.insertSheet(SHEET_NAME);
       
       // Добавляем заголовки для нового листа
-      sheet.getRange(1, 1, 1, 7).setValues([['Дата', 'Время', 'Пользователь', 'Сообщение', 'Имя', 'Username', 'Telegram ID']]);
+      sheet.getRange(1, 1, 1, 8).setValues([['Дата', 'Время', 'Пользователь', 'Сообщение', 'Имя', 'Username', 'Telegram ID', 'Источник']]);
       
       // Форматируем заголовки
-      const headerRange = sheet.getRange(1, 1, 1, 7);
+      const headerRange = sheet.getRange(1, 1, 1, 8);
       headerRange.setFontWeight('bold');
       headerRange.setBackground('#4285f4');
       headerRange.setFontColor('white');
       
       // Автоширина колонок
-      sheet.autoResizeColumns(1, 7);
+      sheet.autoResizeColumns(1, 8);
     }
     
     // Подготавливаем данные для записи
@@ -49,14 +49,15 @@ function doPost(e) {
       data.message || '',
       data.full_name || '',
       data.username || '',
-      data.user_id || ''
+      data.user_id || '',
+      data.source || 'Неизвестный источник'
     ];
     
     // Добавляем строку в таблицу
     sheet.appendRow(rowData);
     
     // Автоширина для новых данных
-    sheet.autoResizeColumns(1, 7);
+    sheet.autoResizeColumns(1, 8);
     
     // Возвращаем успешный ответ
     return ContentService
@@ -139,6 +140,7 @@ const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/ВАШИ_СИМВ�
 - **Имя** - имя и фамилия пользователя из Telegram
 - **Username** - @username пользователя (без @)
 - **Telegram ID** - уникальный ID пользователя в Telegram
+- **Источник** - откуда отправлено (Страница документов - жалоба / Страница бонусов - предложение)
 
 ## Примечания
 

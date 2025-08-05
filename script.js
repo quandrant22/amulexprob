@@ -187,7 +187,8 @@ const tg = window.Telegram.WebApp;
                             message: text,
                             user_id: userInfo.id,
                             username: userInfo.username,
-                            full_name: userInfo.name
+                            full_name: userInfo.name,
+                            source: 'Страница документов - жалоба'
                         })
                     });
                     
@@ -220,9 +221,14 @@ const tg = window.Telegram.WebApp;
         const suggestionCard = document.querySelector('.bonus-card.suggestion');
         if (suggestionCard) {
             suggestionCard.addEventListener('click', () => {
-                const message = 'У меня есть предложение для улучшения бота:';
-                const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
-                openExternalLink(telegramUrl);
+                // Показываем prompt для ввода предложения
+                const suggestion = prompt('Напишите ваше предложение для улучшения бота:');
+                
+                if (suggestion && suggestion.trim()) {
+                    sendSuggestionToGoogleSheets(suggestion.trim());
+                } else if (suggestion !== null) {
+                    alert('Пожалуйста, введите ваше предложение');
+                }
             });
             suggestionCard.style.cursor = 'pointer';
         }
@@ -250,6 +256,71 @@ const tg = window.Telegram.WebApp;
                 window.switchScreen('bonus-offer-screen');
             });
             specialCard.style.cursor = 'pointer';
+        }
+    }
+
+    // Функция для отправки предложений в Google Таблицы
+    async function sendSuggestionToGoogleSheets(suggestionText) {
+        try {
+            // Получаем информацию о пользователе Telegram
+            let userName = 'Аноним';
+            let userInfo = {
+                name: 'Аноним',
+                id: null,
+                username: null
+            };
+            
+            if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe) {
+                const user = window.Telegram.WebApp.initDataUnsafe.user;
+                if (user) {
+                    const fullName = `${user.first_name || ''} ${user.last_name || ''}`.trim();
+                    userInfo.name = fullName || user.username || `Пользователь ${user.id}`;
+                    userInfo.id = user.id;
+                    userInfo.username = user.username;
+                    
+                    // Формируем строку с полной информацией
+                    userName = userInfo.name;
+                    if (userInfo.username) {
+                        userName += ` (@${userInfo.username})`;
+                    }
+                    if (userInfo.id) {
+                        userName += ` [ID: ${userInfo.id}]`;
+                    }
+                }
+            }
+            
+            // URL Google Apps Script
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz1hxn7ewb-XuV2ytRcKy78gQ_clR1-8ei8DMzAF9LyFcHqpMVEzjHpwXm5j8e07kFHCg/exec';
+            
+            // Отправляем в Google Таблицы
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Важно для Google Apps Script
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user: userName,
+                    message: suggestionText,
+                    user_id: userInfo.id,
+                    username: userInfo.username,
+                    full_name: userInfo.name,
+                    source: 'Страница бонусов - предложение'
+                })
+            });
+            
+            // Успешная отправка
+            alert('Спасибо за ваше предложение! Оно успешно отправлено и будет рассмотрено.');
+            
+        } catch (error) {
+            console.error('Ошибка отправки предложения в Google Таблицы:', error);
+            
+            // Fallback - отправляем в Telegram
+            const message = `💡 ПРЕДЛОЖЕНИЕ:\n\n${suggestionText}`;
+            const telegramUrl = `https://t.me/mihail_rein?text=${encodeURIComponent(message)}`;
+            openExternalLink(telegramUrl);
+            
+            alert('Предложение отправлено через Telegram. Спасибо за ваш отзыв!');
         }
     }
 
