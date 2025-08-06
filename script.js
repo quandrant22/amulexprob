@@ -588,11 +588,51 @@ const tg = window.Telegram.WebApp;
         }
     }
 
+    // Обработчики для страницы "Информация"
+    function setupInfoButtons() {
+        // Кнопка "Сайт"
+        const siteBtn = document.getElementById('info-site-btn');
+        if (siteBtn) {
+            siteBtn.addEventListener('click', () => {
+                openExternalLink('https://amulex.ru');
+            });
+        }
+
+        // Кнопка "Связаться"
+        const contactBtn = document.getElementById('info-contact-btn');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', () => {
+                openExternalLink('https://t.me/amulex_support'); // Замените на реальный контакт поддержки
+            });
+        }
+
+        // Кнопка "Подробнее"
+        const detailsBtn = document.getElementById('info-details-btn');
+        if (detailsBtn) {
+            detailsBtn.addEventListener('click', () => {
+                // Здесь может быть переход на отдельный экран с подробным описанием
+                alert('Раздел "Функционал и описание" находится в разработке.');
+            });
+        }
+
+        // Кнопка "Открыть" для оферты
+        const offerBtn = document.getElementById('info-offer-btn');
+        if (offerBtn) {
+            offerBtn.addEventListener('click', () => {
+                // Замените на реальную ссылку на публичную оферту
+                openExternalLink('https://amulex.ru/docs/offer'); 
+            });
+        }
+    }
+
     // Инициализируем кнопки реферальной программы
     setupReferralButtons();
     
     // Инициализируем кнопки подписки навсегда
     setupForeverSubscriptionButtons();
+
+    // Инициализируем кнопки на странице "Информация"
+    setupInfoButtons();
 
     // Расширяем область для клика на всю обертку в чате
     const inputWrapper = document.querySelector('.input-wrapper');
