@@ -588,37 +588,37 @@ const tg = window.Telegram.WebApp;
         }
     }
 
-    // Обработчики для страницы "Информация"
+    // Обработчики для страницы "Информация" - переписаны заново
     function setupInfoButtons() {
         // Кнопка "Сайт"
-        const siteBtn = document.getElementById('info-site-btn');
-        if (siteBtn) {
-            siteBtn.addEventListener('click', () => {
+        const siteButton = document.getElementById('info-site-btn');
+        if (siteButton) {
+            siteButton.addEventListener('click', () => {
                 openExternalLink('https://amulex.ru');
             });
         }
 
         // Кнопка "Связаться"
-        const contactBtn = document.getElementById('info-contact-btn');
-        if (contactBtn) {
-            contactBtn.addEventListener('click', () => {
+        const contactButton = document.getElementById('info-contact-btn');
+        if (contactButton) {
+            contactButton.addEventListener('click', () => {
                 openExternalLink('https://t.me/mihail_rein');
             });
         }
 
         // Кнопка "Подробнее"
-        const detailsBtn = document.getElementById('info-details-btn');
-        if (detailsBtn) {
-            detailsBtn.addEventListener('click', () => {
+        const detailsButton = document.getElementById('info-details-btn');
+        if (detailsButton) {
+            detailsButton.addEventListener('click', () => {
                 // Показываем информацию о функционале бота
                 alert('Твой Друг Юрист может:\n\n• Консультировать по юридическим вопросам\n• Создавать документы и договоры\n• Анализировать правовые ситуации\n• Подбирать шаблоны документов\n• Связывать с реальными юристами при необходимости');
             });
         }
 
         // Кнопка "Открыть" для оферты
-        const offerBtn = document.getElementById('info-offer-btn');
-        if (offerBtn) {
-            offerBtn.addEventListener('click', () => {
+        const offerButton = document.getElementById('info-offer-btn');
+        if (offerButton) {
+            offerButton.addEventListener('click', () => {
                 openExternalLink('https://amulex.ru/offer');
             });
         }
