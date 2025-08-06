@@ -602,7 +602,7 @@ const tg = window.Telegram.WebApp;
         const contactBtn = document.getElementById('info-contact-btn');
         if (contactBtn) {
             contactBtn.addEventListener('click', () => {
-                openExternalLink('https://t.me/amulex_support'); // Замените на реальный контакт поддержки
+                openExternalLink('https://t.me/mihail_rein');
             });
         }
 
@@ -610,8 +610,8 @@ const tg = window.Telegram.WebApp;
         const detailsBtn = document.getElementById('info-details-btn');
         if (detailsBtn) {
             detailsBtn.addEventListener('click', () => {
-                // Здесь может быть переход на отдельный экран с подробным описанием
-                alert('Раздел "Функционал и описание" находится в разработке.');
+                // Показываем информацию о функционале бота
+                alert('Твой Друг Юрист может:\n\n• Консультировать по юридическим вопросам\n• Создавать документы и договоры\n• Анализировать правовые ситуации\n• Подбирать шаблоны документов\n• Связывать с реальными юристами при необходимости');
             });
         }
 
@@ -619,8 +619,7 @@ const tg = window.Telegram.WebApp;
         const offerBtn = document.getElementById('info-offer-btn');
         if (offerBtn) {
             offerBtn.addEventListener('click', () => {
-                // Замените на реальную ссылку на публичную оферту
-                openExternalLink('https://amulex.ru/docs/offer'); 
+                openExternalLink('https://amulex.ru/offer');
             });
         }
     }

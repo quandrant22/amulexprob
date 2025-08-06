@@ -1153,63 +1153,57 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-.info-card {
+.info-section {
     background-color: var(--input-bg-color);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.info-content {
-    flex-grow: 1;
-}
-
-.info-content h3 {
-    margin: 0 0 5px 0;
+.info-section h3 {
+    margin: 0 0 8px 0;
     font-size: 16px;
     font-weight: 600;
     color: var(--primary-text-color);
 }
 
-.info-content p {
-    margin: 0;
+.info-section p {
+    margin: 0 0 15px 0;
     font-size: 14px;
     color: var(--secondary-text-color);
+    line-height: 1.4;
 }
 
-.info-actions {
+.info-buttons {
     display: flex;
-    flex-direction: column;
     gap: 10px;
-    margin-left: 20px;
+    justify-content: flex-end;
 }
 
-.info-btn {
+.info-action-btn {
     background-color: var(--app-bg-color);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--primary-text-color);
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
-    min-width: 90px;
+    min-width: 70px;
     text-align: center;
 }
 
-.info-btn:hover {
+.info-action-btn:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
 }
 
-.info-btn:active {
-    transform: scale(0.95);
+.info-action-btn:active {
+    transform: scale(0.98);
 }
 
 /* Стили для экрана документов */
