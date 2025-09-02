@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1E1E1E">
+    <title>Документы - AI Юрист</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: white;
+            width: 390px;
+            height: 458px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        /* Заголовок */
+        .header {
+            background-color: #161616;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        /* Поисковая строка */
+        .search-container {
+            background-color: #008D80;
+            padding: 15px 25px;
+            position: relative;
+        }
+        
+        .search-box {
+            background-color: white;
+            border-radius: 12px;
+            padding: 12px 45px 12px 15px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+        }
+        
+        .search-input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            color: #161616;
+            background: transparent;
+        }
+        
+        .search-input::placeholder {
+            color: #666;
+        }
+        
+        /* Кнопки */
+        .buttons-container {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .doc-button {
+            background-color: #008D80;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .doc-button:hover {
+            background-color: #007169;
+            transform: translateY(-1px);
+        }
+        
+        .doc-button:active {
+            transform: translateY(0);
+        }
+        
+        /* Серая секция */
+        .bottom-section {
+            background-color: #26282C;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        .help-text {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .help-question {
+            color: #ccc;
+            font-size: 12px;
+        }
+        
+        /* Нижняя навигация */
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background-color: #F4F5F7;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-top: 1px solid #E5E5E5;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            color: #008D80;
+        }
+        
+        .nav-item.active {
+            color: #008D80;
+        }
+        
+        .nav-item:not(.active) {
+            color: #919191;
+        }
+        
+        .nav-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .nav-item.active .nav-icon {
+            background-color: #008D80;
+            color: white;
+        }
+        
+        .nav-item:not(.active) .nav-icon {
+            background-color: white;
+            color: #919191;
+        }
+        
+        .nav-label {
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        /* Иконки */
+        .folder-icon::before {
+            content: "📁";
+        }
+        
+        .star-icon::before {
+            content: "⭐";
+        }
+        
+        .chat-icon::before {
+            content: "💬";
+        }
+        
+        .user-icon::before {
+            content: "👤";
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Заголовок -->
+        <div class="header">
+            Документы
+        </div>
+        
+        <!-- Поисковая строка -->
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Поиск по документам">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Кнопки -->
+        <div class="buttons-container">
+            <button class="doc-button">
+                Получить юридический анализ
+            </button>
+            <button class="doc-button">
+                Получить шаблон документа
+            </button>
+            <button class="doc-button">
+                Найти шаблон на сайте Амулекс
+            </button>
+        </div>
+        
+        <!-- Серая секция -->
+        <div class="bottom-section">
+            <div>
+                <div class="help-text">Не нашли что ищете?</div>
+                <div class="help-question">Отправить запрос</div>
+            </div>
+        </div>
+        
+        <!-- Нижняя навигация -->
+        <div class="bottom-nav">
+            <button class="nav-item active">
+                <div class="nav-icon folder-icon"></div>
+                <span class="nav-label">Документы</span>
+            </button>
+            <button class="nav-item">
+                <div class="nav-icon star-icon"></div>
+                <span class="nav-label">Бонусы</span>
+            </button>
+            <button class="nav-item">
+                <div class="nav-icon chat-icon"></div>
+                <span class="nav-label">Инфо</span>
+            </button>
+            <button class="nav-item">
+                <div class="nav-icon user-icon"></div>
+                <span class="nav-label">Профиль</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
