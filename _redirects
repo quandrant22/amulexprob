@@ -1,0 +1,6 @@
+# Redirects for Telegram Mini App
+/documents /documents.html 200
+/ /index.html 200
+
+# Fallback for SPA
+/* /index.html 200
