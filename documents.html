@@ -7,184 +7,255 @@
     <title>Документы - AI Юрист</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: white;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .v975_1357 {
             width: 390px;
             height: 458px;
+            background: rgba(255,255,255,1);
+            opacity: 1;
+            position: relative;
+            top: 0px;
+            left: 0px;
             overflow: hidden;
+        }
+        .v975_1359 {
+            width: 390px;
+            height: 361px;
+            background: rgba(255,255,255,1);
+            padding: 20px 25px;
+            opacity: 1;
             position: relative;
+            top: 0px;
+            left: 0px;
+            border-top-left-radius: 26px;
+            border-top-right-radius: 26px;
+            border-bottom-left-radius: 26px;
+            border-bottom-right-radius: 26px;
+            overflow: hidden;
         }
-        
-        .container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        
-        /* Заголовок */
-        .header {
-            background-color: #161616;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 18px;
-            font-weight: 600;
-        }
-        
-        /* Поисковая строка */
-        .search-container {
-            background-color: #008D80;
-            padding: 15px 25px;
-            position: relative;
-        }
-        
-        .search-box {
-            background-color: white;
-            border-radius: 12px;
-            padding: 12px 45px 12px 15px;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-        
-        .search-icon {
+        .v975_1360 {
+            width: 340px;
+            height: 41px;
+            opacity: 1;
             position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
+            top: 20px;
+            left: 25px;
+            overflow: hidden;
         }
-        
-        .search-input {
-            border: none;
-            outline: none;
-            width: 100%;
-            font-size: 14px;
-            color: #161616;
-            background: transparent;
+        .v975_1362 {
+            width: 340px;
+            color: rgba(22,22,22,1);
+            position: relative;
+            top: 8px;
+            left: 0px;
+            font-family: Inter;
+            font-weight: Bold;
+            font-size: 20px;
+            opacity: 1;
+            text-align: center;
         }
-        
-        .search-input::placeholder {
-            color: #666;
+        .v975_1363 {
+            width: 340px;
+            height: 170px;
+            opacity: 1;
+            position: absolute;
+            top: 81px;
+            left: 25px;
+            overflow: hidden;
         }
-        
-        /* Кнопки */
-        .buttons-container {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .doc-button {
-            background-color: #008D80;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            padding: 15px 20px;
-            font-size: 14px;
-            font-weight: 500;
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .doc-button:hover {
-            background-color: #007169;
-            transform: translateY(-1px);
-        }
-        
-        .doc-button:active {
-            transform: translateY(0);
-        }
-        
-        /* Стили для изображения кнопки */
-        .button-image {
+        .v975_1364 {
             width: 340px;
             height: 50px;
+            background: rgba(0,141,128,1);
+            padding: 10px 20px;
+            opacity: 1;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            overflow: hidden;
             cursor: pointer;
             transition: all 0.2s ease;
-            border-radius: 12px;
-            display: block;
-            margin: 0;
         }
-        
-        .button-image:hover {
+        .v975_1364:hover {
             transform: translateY(-1px);
             opacity: 0.9;
         }
-        
-        .button-image:active {
-            transform: translateY(0);
-        }
-        
-        /* Серая секция */
-        .bottom-section {
-            background-color: #26282C;
+        .v975_1365 {
+            width: 13px;
+            height: 13px;
+            background: rgba(255,255,255,1);
+            opacity: 1;
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            top: 18px;
+            left: 20px;
+        }
+        .v975_1366 {
+            width: 217px;
+            color: rgba(255,255,255,1);
+            position: absolute;
+            top: 15px;
+            left: 43px;
+            font-family: Inter;
+            font-weight: Medium;
             font-size: 14px;
-            text-align: center;
+            opacity: 1;
+            text-align: left;
         }
-        
-        .help-text {
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .help-question {
-            color: #ccc;
-            font-size: 12px;
-        }
-        
-        /* Нижняя навигация */
-        .bottom-nav {
+        .v975_1367 {
+            width: 340px;
+            height: 50px;
+            background: rgba(0,141,128,1);
+            padding: 10px 20px;
+            opacity: 1;
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background-color: #F4F5F7;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            border-top: 1px solid #E5E5E5;
+            top: 60px;
+            left: 0px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
-        
+        .v975_1367:hover {
+            transform: translateY(-1px);
+            opacity: 0.9;
+        }
+        .v975_1368 {
+            width: 10px;
+            height: 14px;
+            background: rgba(255,255,255,1);
+            opacity: 1;
+            position: absolute;
+            top: 18px;
+            left: 20px;
+        }
+        .v975_1369 {
+            width: 202px;
+            color: rgba(255,255,255,1);
+            position: absolute;
+            top: 15px;
+            left: 40px;
+            font-family: Inter;
+            font-weight: Medium;
+            font-size: 14px;
+            opacity: 1;
+            text-align: left;
+        }
+        .v975_1371 {
+            width: 340px;
+            height: 50px;
+            background: rgba(0,141,128,1);
+            padding: 10px 20px;
+            opacity: 1;
+            position: absolute;
+            top: 120px;
+            left: 0px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .v975_1371:hover {
+            transform: translateY(-1px);
+            opacity: 0.9;
+        }
+        .v975_1372 {
+            width: 13px;
+            height: 13px;
+            background: rgba(255,255,255,1);
+            opacity: 1;
+            position: absolute;
+            top: 18px;
+            left: 20px;
+        }
+        .v975_1373 {
+            width: 225px;
+            color: rgba(255,255,255,1);
+            position: absolute;
+            top: 15px;
+            left: 43px;
+            font-family: Inter;
+            font-weight: Medium;
+            font-size: 14px;
+            opacity: 1;
+            text-align: left;
+        }
+        .v975_1374 {
+            width: 340px;
+            height: 70px;
+            background: rgba(38,40,44,1);
+            padding: 10px 40px;
+            opacity: 1;
+            position: absolute;
+            top: 271px;
+            left: 25px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            overflow: hidden;
+        }
+        .v975_1375 {
+            width: 178px;
+            color: rgba(255,255,255,1);
+            position: absolute;
+            top: 14px;
+            left: 81px;
+            opacity: 1;
+            text-align: center;
+            font-family: Inter;
+            font-size: 14px;
+        }
+        .v975_1376 {
+            width: 390px;
+            height: 97px;
+            background: rgba(244,245,247,1);
+            padding: 20px 25px;
+            opacity: 1;
+            position: absolute;
+            top: 361px;
+            left: 0px;
+            border-top-left-radius: 26px;
+            border-top-right-radius: 26px;
+            overflow: hidden;
+        }
+        .v975_1377 {
+            width: 317px;
+            height: 57px;
+            opacity: 1;
+            position: absolute;
+            top: 20px;
+            left: 36px;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
         .nav-item {
+            width: 50px;
+            height: 57px;
+            position: relative;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            color: #008D80;
         }
-        
-        .nav-item.active {
-            color: #008D80;
-        }
-        
-        .nav-item:not(.active) {
-            color: #919191;
-        }
-        
         .nav-icon {
             width: 40px;
             height: 40px;
@@ -192,101 +263,148 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 16px;
         }
-        
         .nav-item.active .nav-icon {
-            background-color: #008D80;
+            background: rgba(0,141,128,1);
             color: white;
         }
-        
         .nav-item:not(.active) .nav-icon {
-            background-color: white;
-            color: #919191;
+            background: rgba(255,255,255,1);
+            color: rgba(144,144,144,1);
         }
-        
         .nav-label {
-            font-size: 12px;
-            font-weight: 500;
+            color: rgba(0,141,128,1);
+            font-family: Inter;
+            font-weight: Medium;
+            font-size: 10px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .nav-item:not(.active) .nav-label {
+            color: rgba(144,144,144,1);
+            font-weight: Regular;
         }
         
-        /* Иконки */
-        .folder-icon::before {
-            content: "📁";
+        /* Иконки поиска */
+        .search-icon {
+            position: relative;
+        }
+        .search-icon::before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 2px solid white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+        }
+        .search-icon::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 4px;
+            background: white;
+            transform: rotate(45deg);
+            top: 8px;
+            left: 8px;
         }
         
-        .star-icon::before {
-            content: "⭐";
+        /* Иконка документа */
+        .doc-icon {
+            position: relative;
+        }
+        .doc-icon::before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 10px;
+            border: 2px solid white;
+            border-radius: 1px;
+            top: 2px;
+            left: 3px;
+        }
+        .doc-icon::after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 1px;
+            background: white;
+            top: 5px;
+            left: 5px;
+            box-shadow: 0 2px 0 white, 0 4px 0 white;
         }
         
-        .chat-icon::before {
-            content: "💬";
+        /* Иконка ссылки */
+        .link-icon {
+            position: relative;
         }
-        
-        .user-icon::before {
-            content: "👤";
+        .link-icon::before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border: 2px solid white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+        }
+        .link-icon::after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border: 2px solid white;
+            border-radius: 50%;
+            top: 6px;
+            left: 6px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Заголовок -->
-        <div class="header">
-            Документы
-        </div>
-        
-        <!-- Поисковая строка -->
-        <div class="search-container">
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="Поиск по документам">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/>
-                    <path d="m21 21-4.35-4.35"/>
-                </svg>
+    <div class="v975_1357">
+        <div class="v975_1359">
+            <div class="v975_1360">
+                <div class="v975_1362">Документы</div>
+            </div>
+            <div class="v975_1363">
+                <div class="v975_1364">
+                    <div class="v975_1365 search-icon"></div>
+                    <div class="v975_1366">Найти юридический анализ</div>
+                </div>
+                <div class="v975_1367">
+                    <div class="v975_1368 doc-icon"></div>
+                    <div class="v975_1369">Получить шаблон документа</div>
+                </div>
+                <div class="v975_1371">
+                    <div class="v975_1372 link-icon"></div>
+                    <div class="v975_1373">Найти шаблон на сайте Амулекс</div>
+                </div>
+            </div>
+            <div class="v975_1374">
+                <div class="v975_1375">Не нашли что ищете?<br>Отправить запрос</div>
             </div>
         </div>
-        
-        <!-- Кнопки -->
-        <div class="buttons-container">
-            <svg class="button-image" width="340" height="50" viewBox="0 0 340 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="340" height="50" rx="12" fill="#008D80"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M32.8084 30.3385L29.6031 27.1211C30.4269 26.177 30.8775 24.9845 30.8775 23.7484C30.8775 20.854 28.4381 18.5 25.4387 18.5C22.4394 18.5 20 20.854 20 23.7484C20 26.6429 22.4394 28.9969 25.4387 28.9969C26.5651 28.9969 27.64 28.6677 28.554 28.0466L31.785 31.2888C31.9202 31.4255 32.1004 31.5 32.2935 31.5C32.4802 31.5 32.6539 31.4317 32.7827 31.3075C33.0659 31.0466 33.0723 30.6118 32.802 30.3385H32.8084ZM25.4387 19.8665C27.6529 19.8665 29.4615 21.6056 29.4615 23.7484C29.4615 25.8851 27.6593 27.6304 25.4387 27.6304C23.2246 27.6304 21.416 25.8913 21.416 23.7484C21.416 21.6118 23.2182 19.8665 25.4387 19.8665Z" fill="white"/>
-                <text x="60" y="30" fill="white" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500">Найти юридический анализ</text>
-            </svg>
-            <button class="doc-button">
-                Получить шаблон документа
-            </button>
-            <button class="doc-button">
-                Найти шаблон на сайте Амулекс
-            </button>
-        </div>
-        
-        <!-- Серая секция -->
-        <div class="bottom-section">
-            <div>
-                <div class="help-text">Не нашли что ищете?</div>
-                <div class="help-question">Отправить запрос</div>
+        <div class="v975_1376">
+            <div class="v975_1377">
+                <div class="nav-item active">
+                    <div class="nav-icon">📁</div>
+                    <div class="nav-label">Документы</div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-icon">⭐</div>
+                    <div class="nav-label">Бонусы</div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-icon">ℹ️</div>
+                    <div class="nav-label">Инфо</div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-icon">👤</div>
+                    <div class="nav-label">Профиль</div>
+                </div>
             </div>
-        </div>
-        
-        <!-- Нижняя навигация -->
-        <div class="bottom-nav">
-            <button class="nav-item active">
-                <div class="nav-icon folder-icon"></div>
-                <span class="nav-label">Документы</span>
-            </button>
-            <button class="nav-item">
-                <div class="nav-icon star-icon"></div>
-                <span class="nav-label">Бонусы</span>
-            </button>
-            <button class="nav-item">
-                <div class="nav-icon chat-icon"></div>
-                <span class="nav-label">Инфо</span>
-            </button>
-            <button class="nav-item">
-                <div class="nav-icon user-icon"></div>
-                <span class="nav-label">Профиль</span>
-            </button>
         </div>
     </div>
 </body>
