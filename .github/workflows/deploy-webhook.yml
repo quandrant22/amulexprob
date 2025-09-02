@@ -1,0 +1,31 @@
+name: Deploy to Existing Server via Webhook
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  notify-server:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Notify server to update
+      run: |
+        # Отправляем webhook на ваш сервер для обновления
+        curl -X POST "${{ secrets.WEBHOOK_URL }}" \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer ${{ secrets.WEBHOOK_SECRET }}" \
+          -d '{
+            "event": "deployment",
+            "repository": "${{ github.repository }}",
+            "branch": "${{ github.ref_name }}",
+            "commit": "${{ github.sha }}"
+          }'
+
+
+
