@@ -3,409 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#1E1E1E">
+    <meta name="theme-color" content="#008D80">
     <title>Документы - AI Юрист</title>
     <style>
         * {
             box-sizing: border-box;
-        }
-        body {
-            font-size: 14px;
             margin: 0;
             padding: 0;
-            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-        .v975_1357 {
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            width: 390px;
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+
+        /* Основной контейнер */
+        .main-container {
             width: 390px;
             height: 458px;
-            background: rgba(255,255,255,1);
-            opacity: 1;
-            position: relative;
-            top: 0px;
-            left: 0px;
-            overflow: hidden;
-        }
-        .v975_1359 {
-            width: 390px;
-            height: 361px;
-            background: rgba(255,255,255,1);
-            padding: 20px 25px;
-            opacity: 1;
-            position: relative;
-            top: 0px;
-            left: 0px;
-            border-top-left-radius: 26px;
-            border-top-right-radius: 26px;
-            border-bottom-left-radius: 26px;
-            border-bottom-right-radius: 26px;
-            overflow: hidden;
-        }
-        .v975_1360 {
-            width: 340px;
-            height: 41px;
-            opacity: 1;
-            position: absolute;
-            top: 20px;
-            left: 25px;
-            overflow: hidden;
-        }
-        .v975_1362 {
-            width: 340px;
-            color: rgba(22,22,22,1);
-            position: relative;
-            top: 8px;
-            left: 0px;
-            font-family: Inter;
-            font-weight: Bold;
-            font-size: 20px;
-            opacity: 1;
-            text-align: center;
-        }
-        .v975_1363 {
-            width: 340px;
-            height: 170px;
-            opacity: 1;
-            position: absolute;
-            top: 81px;
-            left: 25px;
-            overflow: hidden;
-        }
-        .v975_1364 {
-            width: 340px;
-            height: 50px;
-            background: rgba(0,141,128,1);
-            padding: 10px 20px;
-            opacity: 1;
-            position: relative;
-            top: 0px;
-            left: 0px;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .v975_1364:hover {
-            transform: translateY(-1px);
-            opacity: 0.9;
-        }
-        .v975_1365 {
-            width: 13px;
-            height: 13px;
-            background: rgba(255,255,255,1);
-            opacity: 1;
-            position: absolute;
-            top: 18px;
-            left: 20px;
-        }
-        .v975_1366 {
-            width: 217px;
-            color: rgba(255,255,255,1);
-            position: absolute;
-            top: 15px;
-            left: 43px;
-            font-family: Inter;
-            font-weight: Medium;
-            font-size: 14px;
-            opacity: 1;
-            text-align: left;
-        }
-        .v975_1367 {
-            width: 340px;
-            height: 50px;
-            background: rgba(0,141,128,1);
-            padding: 10px 20px;
-            opacity: 1;
-            position: absolute;
-            top: 60px;
-            left: 0px;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .v975_1367:hover {
-            transform: translateY(-1px);
-            opacity: 0.9;
-        }
-        .v975_1368 {
-            width: 10px;
-            height: 14px;
-            background: rgba(255,255,255,1);
-            opacity: 1;
-            position: absolute;
-            top: 18px;
-            left: 20px;
-        }
-        .v975_1369 {
-            width: 202px;
-            color: rgba(255,255,255,1);
-            position: absolute;
-            top: 15px;
-            left: 40px;
-            font-family: Inter;
-            font-weight: Medium;
-            font-size: 14px;
-            opacity: 1;
-            text-align: left;
-        }
-        .v975_1371 {
-            width: 340px;
-            height: 50px;
-            background: rgba(0,141,128,1);
-            padding: 10px 20px;
-            opacity: 1;
-            position: absolute;
-            top: 120px;
-            left: 0px;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .v975_1371:hover {
-            transform: translateY(-1px);
-            opacity: 0.9;
-        }
-        .v975_1372 {
-            width: 13px;
-            height: 13px;
-            background: rgba(255,255,255,1);
-            opacity: 1;
-            position: absolute;
-            top: 18px;
-            left: 20px;
-        }
-        .v975_1373 {
-            width: 225px;
-            color: rgba(255,255,255,1);
-            position: absolute;
-            top: 15px;
-            left: 43px;
-            font-family: Inter;
-            font-weight: Medium;
-            font-size: 14px;
-            opacity: 1;
-            text-align: left;
-        }
-        .v975_1374 {
-            width: 340px;
-            height: 70px;
-            background: rgba(38,40,44,1);
-            padding: 10px 40px;
-            opacity: 1;
-            position: absolute;
-            top: 271px;
-            left: 25px;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-            overflow: hidden;
-        }
-        .v975_1375 {
-            width: 178px;
-            color: rgba(255,255,255,1);
-            position: absolute;
-            top: 14px;
-            left: 81px;
-            opacity: 1;
-            text-align: center;
-            font-family: Inter;
-            font-size: 14px;
-        }
-        .v975_1376 {
-            width: 390px;
-            height: 97px;
-            background: rgba(244,245,247,1);
-            padding: 20px 25px;
-            opacity: 1;
-            position: absolute;
-            top: 361px;
-            left: 0px;
-            border-top-left-radius: 26px;
-            border-top-right-radius: 26px;
-            overflow: hidden;
-        }
-        .v975_1377 {
-            width: 317px;
-            height: 57px;
-            opacity: 1;
-            position: absolute;
-            top: 20px;
-            left: 36px;
-            overflow: hidden;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .nav-item {
-            width: 50px;
-            height: 57px;
-            position: relative;
-            cursor: pointer;
+            background: #ffffff;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            border-radius: 0 0 40px 40px;
         }
-        .nav-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 14px;
+
+        /* Верхняя секция */
+        .content-section {
+            flex: 1;
+            padding: 20px 25px;
+            border-radius: 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Заголовок */
+        .header {
+            height: 41px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            color: #161616;
+            text-align: center;
+            line-height: 24px;
+            margin: 0;
+        }
+
+        /* Группа основных действий */
+        .actions-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .action-button, .action-link {
+            height: 50px;
+            background: #008D80;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            color: white;
+        }
+
+        .action-button:hover, .action-link:hover {
+            opacity: 0.9;
+        }
+
+        .action-button:focus, .action-link:focus {
+            outline: 2px solid #008D80;
+            outline-offset: 2px;
+        }
+
+        .action-icon {
+            width: 13px;
+            height: 13px;
+            flex-shrink: 0;
+        }
+
+        .action-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: white;
+            white-space: nowrap;
+        }
+
+        /* Секция запроса */
+        .request-section {
+            height: 70px;
+            background: #26282C;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 10px 40px;
+        }
+
+        .request-text {
+            font-family: 'Inter', sans-serif;
             font-size: 16px;
-        }
-        .nav-item.active .nav-icon {
-            background: rgba(0,141,128,1);
             color: white;
+            text-align: center;
+            line-height: 22.4px;
         }
-        .nav-item:not(.active) .nav-icon {
-            background: rgba(255,255,255,1);
-            color: rgba(144,144,144,1);
+
+        .request-text .bold {
+            font-weight: bold;
         }
+
+        .request-button {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: white;
+            background: transparent;
+            border: none;
+            text-decoration: underline;
+            cursor: pointer;
+            line-height: 19.6px;
+        }
+
+        .request-button:hover {
+            opacity: 0.8;
+        }
+
+        .request-button:focus {
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+
+        /* Нижняя навигация */
+        .navigation {
+            background: #f4f5f7;
+            border-radius: 26px 26px 0 0;
+            padding: 20px 25px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-container {
+            width: 317px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .nav-item {
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .nav-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .nav-button:hover {
+            opacity: 0.8;
+        }
+
+        .nav-button:focus {
+            outline: 2px solid #008D80;
+            outline-offset: 2px;
+        }
+
+        .nav-item.active .nav-button {
+            background: #008D80;
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 16px;
+        }
+
         .nav-label {
-            color: rgba(0,141,128,1);
-            font-family: Inter;
-            font-weight: Medium;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
             text-align: center;
-            margin-top: 5px;
+            line-height: 12px;
+            white-space: nowrap;
+            color: #909090;
         }
-        .nav-item:not(.active) .nav-label {
-            color: rgba(144,144,144,1);
-            font-weight: Regular;
+
+        .nav-item.active .nav-label {
+            font-weight: 500;
+            color: #008D80;
         }
-        
-        /* Иконки поиска */
+
+        /* SVG иконки */
         .search-icon {
-            position: relative;
+            fill: white;
+            stroke: white;
         }
-        .search-icon::before {
-            content: "";
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border: 2px solid white;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
-        }
-        .search-icon::after {
-            content: "";
-            position: absolute;
-            width: 2px;
-            height: 4px;
-            background: white;
-            transform: rotate(45deg);
-            top: 8px;
-            left: 8px;
-        }
-        
-        /* Иконка документа */
+
         .doc-icon {
-            position: relative;
+            fill: white;
         }
-        .doc-icon::before {
-            content: "";
-            position: absolute;
-            width: 8px;
-            height: 10px;
-            border: 2px solid white;
-            border-radius: 1px;
-            top: 2px;
-            left: 3px;
-        }
-        .doc-icon::after {
-            content: "";
-            position: absolute;
-            width: 4px;
-            height: 1px;
-            background: white;
-            top: 5px;
-            left: 5px;
-            box-shadow: 0 2px 0 white, 0 4px 0 white;
-        }
-        
-        /* Иконка ссылки */
+
         .link-icon {
-            position: relative;
+            fill: white;
         }
-        .link-icon::before {
-            content: "";
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            border: 2px solid white;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
+
+        /* Адаптивные размеры для разных иконок */
+        .bonuses-icon {
+            width: 22px;
+            height: 22px;
         }
-        .link-icon::after {
-            content: "";
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            border: 2px solid white;
-            border-radius: 50%;
-            top: 6px;
-            left: 6px;
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .profile-icon {
+            width: 18px;
+            height: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="v975_1357">
-        <div class="v975_1359">
-            <div class="v975_1360">
-                <div class="v975_1362">Документы</div>
+    <main class="main-container">
+        <section class="content-section">
+            <!-- Заголовок -->
+            <header class="header">
+                <h1>Документы</h1>
+            </header>
+
+            <!-- Основные действия -->
+            <div class="actions-group" role="group" aria-label="Основные действия">
+                <button class="action-button" onclick="handleAction('legal-analysis')" aria-label="Получить юридический анализ">
+                    <svg class="action-icon search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    <span class="action-text">Получить юридический анализ</span>
+                </button>
+
+                <button class="action-button" onclick="handleAction('document-template')" aria-label="Получить шаблон документа">
+                    <svg class="action-icon doc-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                    </svg>
+                    <span class="action-text">Получить шаблон документа</span>
+                </button>
+
+                <a href="#" class="action-link" onclick="handleAction('find-template'); return false;" aria-label="Найти шаблон на сайте Амулекс">
+                    <svg class="action-icon link-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z"/>
+                    </svg>
+                    <span class="action-text">Найти шаблон на сайте Амулекс</span>
+                </a>
             </div>
-            <div class="v975_1363">
-                <div class="v975_1364">
-                    <div class="v975_1365 search-icon"></div>
-                    <div class="v975_1366">Найти юридический анализ</div>
+
+            <!-- Секция запроса -->
+            <div class="request-section">
+                <p class="request-text">
+                    <span class="bold">Не нашли что ищете?</span>
+                    <button class="request-button" onclick="handleRequest()" aria-label="Отправить запрос">
+                        Отправить запрос
+                    </button>
+                </p>
+            </div>
+        </section>
+
+        <!-- Нижняя навигация -->
+        <nav class="navigation" aria-label="Основная навигация">
+            <div class="nav-container" role="tablist">
+                <div class="nav-item active" role="tab" aria-selected="true">
+                    <button class="nav-button" onclick="handleTab('documents')" aria-label="Документы">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                        </svg>
+                    </button>
+                    <span class="nav-label">Документы</span>
                 </div>
-                <div class="v975_1367">
-                    <div class="v975_1368 doc-icon"></div>
-                    <div class="v975_1369">Получить шаблон документа</div>
+
+                <div class="nav-item" role="tab" aria-selected="false">
+                    <button class="nav-button" onclick="handleTab('bonuses')" aria-label="Бонусы">
+                        <svg class="nav-icon bonuses-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5,16L3,5H1V3H4L6,14H18.5L19.5,10H7.5L8.5,8H21.5C21.8,8 22,8.2 22,8.5C22,8.6 22,8.7 21.9,8.8L19.9,15.8C19.8,16.3 19.4,16.5 19,16.5H6C5.6,16.5 5.2,16.3 5.1,15.9C5,15.8 5,15.7 5,15.6V16M6,20A2,2 0 0,0 8,22A2,2 0 0,0 10,20A2,2 0 0,0 8,18A2,2 0 0,0 6,20M16,20A2,2 0 0,0 18,22A2,2 0 0,0 20,20A2,2 0 0,0 18,18A2,2 0 0,0 16,20Z"/>
+                        </svg>
+                    </button>
+                    <span class="nav-label">Бонусы</span>
                 </div>
-                <div class="v975_1371">
-                    <div class="v975_1372 link-icon"></div>
-                    <div class="v975_1373">Найти шаблон на сайте Амулекс</div>
+
+                <div class="nav-item" role="tab" aria-selected="false">
+                    <button class="nav-button" onclick="handleTab('info')" aria-label="Инфо">
+                        <svg class="nav-icon info-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                        </svg>
+                    </button>
+                    <span class="nav-label">Инфо</span>
+                </div>
+
+                <div class="nav-item" role="tab" aria-selected="false">
+                    <button class="nav-button" onclick="handleTab('profile')" aria-label="Профиль">
+                        <svg class="nav-icon profile-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                        </svg>
+                    </button>
+                    <span class="nav-label">Профиль</span>
                 </div>
             </div>
-            <div class="v975_1374">
-                <div class="v975_1375">Не нашли что ищете?<br>Отправить запрос</div>
-            </div>
-        </div>
-        <div class="v975_1376">
-            <div class="v975_1377">
-                <div class="nav-item active">
-                    <div class="nav-icon">📁</div>
-                    <div class="nav-label">Документы</div>
-                </div>
-                <div class="nav-item">
-                    <div class="nav-icon">⭐</div>
-                    <div class="nav-label">Бонусы</div>
-                </div>
-                <div class="nav-item">
-                    <div class="nav-icon">ℹ️</div>
-                    <div class="nav-label">Инфо</div>
-                </div>
-                <div class="nav-item">
-                    <div class="nav-icon">👤</div>
-                    <div class="nav-label">Профиль</div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </nav>
+    </main>
+
+    <script>
+        // Состояние активной вкладки
+        let activeTab = 'documents';
+
+        // Обработчик действий
+        function handleAction(actionId) {
+            console.log(`Action clicked: ${actionId}`);
+            
+            // Здесь можно добавить логику для каждого действия
+            switch(actionId) {
+                case 'legal-analysis':
+                    alert('Получить юридический анализ');
+                    break;
+                case 'document-template':
+                    alert('Получить шаблон документа');
+                    break;
+                case 'find-template':
+                    alert('Найти шаблон на сайте Амулекс');
+                    break;
+            }
+        }
+
+        // Обработчик вкладок навигации
+        function handleTab(tabId) {
+            if (activeTab === tabId) return;
+            
+            // Убираем активное состояние со всех вкладок
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                item.setAttribute('aria-selected', 'false');
+            });
+            
+            // Добавляем активное состояние к выбранной вкладке
+            const selectedTab = document.querySelector(`[onclick="handleTab('${tabId}')"]`).closest('.nav-item');
+            selectedTab.classList.add('active');
+            selectedTab.setAttribute('aria-selected', 'true');
+            
+            activeTab = tabId;
+            console.log(`Tab switched to: ${tabId}`);
+            
+            // Здесь можно добавить навигацию между страницами
+            if (tabId !== 'documents') {
+                // Например, перенаправление на другие страницы
+                // window.location.href = `${tabId}.html`;
+            }
+        }
+
+        // Обработчик запроса
+        function handleRequest() {
+            console.log('Request submitted');
+            alert('Запрос отправлен!');
+        }
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Documents page loaded');
+            
+            // Telegram Web App API (если доступно)
+            if (window.Telegram && window.Telegram.WebApp) {
+                window.Telegram.WebApp.ready();
+                window.Telegram.WebApp.expand();
+            }
+        });
+    </script>
 </body>
 </html>
